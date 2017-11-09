@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Zijian Huang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -216,7 +216,14 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
-
+    list = []
+    while True:
+        if (math.sin(start) + math.cos(start)) > threshold:
+            list = list + [start]
+            start = start + 1
+        if len(list) == n:
+            break
+    return list
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
