@@ -112,14 +112,17 @@ def hourglass(window, n, point, radius, color):
             upper_circles = rg.Circle(rg.Point(center_x - (n - 1)* radius,center_y- (n - 1)*math.sqrt(3)*radius),radius)
             upper_circles.fill_color = color
             upper_circles.attach_to(window)
+            upper_line = rg.Line(rg.Point(center_x - (n - 1)* radius - radius,center_y- (n - 1)*math.sqrt(3)*radius),rg.Point(center_x - (n - 1)* radius + radius,center_y- (n - 1)*math.sqrt(3)*radius))
+            upper_line.attach_to(window)
             window.render()
             center_x = center_x + 2 * radius
-
         center_x = original_center_x + ((k+1)* radius)
         center_y = original_center_y + ((k + 1) * math.sqrt(3)*radius)
     center_circle = rg.Circle(rg.Point(original_center_x, original_center_y),radius)
     center_circle.fill_color = color
+    center_line = rg.Line(rg.Point(original_center_x - radius, original_center_y),rg.Point(original_center_x + radius,original_center_y))
     center_circle.attach_to(window)
+    center_line.attach_to(window)
     window.render()
     new_original_center_x = center_circle.center.x
     new_original_center_y = center_circle.center.y
@@ -129,7 +132,9 @@ def hourglass(window, n, point, radius, color):
         for l in range(j + 2):
             lower_circles = rg.Circle(rg.Point(new_center_x - radius,new_center_y + math.sqrt(3)*radius),radius)
             lower_circles.fill_color = color
+            lower_line = rg.Line(rg.Point(new_center_x - radius - radius,new_center_y + math.sqrt(3)*radius),rg.Point(new_center_x - radius + radius,new_center_y + math.sqrt(3)*radius))
             lower_circles.attach_to(window)
+            lower_line.attach_to(window)
             window.render()
             new_center_x = new_center_x + 2 * radius
         new_center_x = new_original_center_x - (j + 1)*radius
