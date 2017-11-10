@@ -234,11 +234,12 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
     list = []
+    k = 0
     while True:
         if len(list) == n:
             break
-        if (math.sin(start) + math.cos(start)) > threshold:
-            list = list + [start]
+        if (math.sin(start + k) + math.cos(start + k)) > threshold:
+            list = list + [start + k]
             start = start + 1
     return list
 
