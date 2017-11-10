@@ -202,7 +202,7 @@ def many_hourglasses(window, square, m, colors):
     each of which denotes a color that rosegraphics understands.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #       We provided some tests for you (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -218,6 +218,41 @@ def many_hourglasses(window, square, m, colors):
     #                         a correct "hourglass" function above)
     #    TIME ESTIMATE:  20 minutes (warning: this problem is challenging)
     # ------------------------------------------------------------------
+
+    center = square.center
+    centerx = square.center.x
+    centery = square.center.y
+    length = square.length_of_each_side
+    original_length = length
+    ul = rg.Point(square.center.x - (original_length / 2), square.center.y - (original_length / 2))
+    original_ul = ul
+    lr = rg.Point(square.center.x + (original_length / 2), square.center.y + (original_length / 2))
+    original_lr = lr
+    ulx = ul.x
+    original_ulx = ulx
+    uly = ul.y
+    original_uly = uly
+    lrx = lr.x
+    original_lrx = lrx
+    lry = lr.y
+    original_lry = lry
+    index = 0
+
+    for k in range(m):
+        rect = rg.Rectangle(rg.Point(ulx, uly), rg.Point(lrx, lry))
+        rect.attach_to(window)
+        hourglass(window, k + 1, rect.get_center(), length / 2, colors[index])
+        window.render()
+        index = index + 1
+        if index == len(colors):
+            index = 0
+        ulx = ulx + (k + 1) * length
+        uly = uly - (length) * (1/1.15)
+        lrx = lrx + ((1 + (k + 1)) * length)
+        lry = lry + length*(1/1.15)
+
+
+
 
 
 # ----------------------------------------------------------------------
