@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -135,6 +135,23 @@ def run_test_practice_problem3():
     #             that they are adequate tests!
     ####################################################################
 
+    # Test 1
+    expected1 = [-5,0,1]
+    answer1 = practice_problem3(-5,3,0.25)
+    print()
+    print('Test 1:')
+    print('Expected:',expected1)
+    print('Actual:  ',answer1)
+
+    # Test 2
+    expected2 = [1,7]
+    answer2 = practice_problem3(-2, 2, 1.3)
+    print()
+    print('Test 2:')
+    print('Expected:', expected2)
+    print('Actual:  ', answer2)
+
+
 
 def practice_problem3(start, n, threshold):
     """
@@ -208,7 +225,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -218,11 +235,11 @@ def practice_problem3(start, n, threshold):
     ####################################################################
     list = []
     while True:
+        if len(list) == n:
+            break
         if (math.sin(start) + math.cos(start)) > threshold:
             list = list + [start]
             start = start + 1
-        if len(list) == n:
-            break
     return list
 
 # ----------------------------------------------------------------------
