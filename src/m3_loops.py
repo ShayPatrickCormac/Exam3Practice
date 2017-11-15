@@ -215,7 +215,7 @@ def practice_problem3(start, n, threshold):
     and if n is 0 (regardless of what start is),
        this function returns []
 
-    and if threshold is more than the square root of 2,
+    and if threshold is more than the square root  of 2,
        this function returns (regardless of what start and n are):
           [start, start + 1, start + 2, ... start + n - 1].
 
