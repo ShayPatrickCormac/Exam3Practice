@@ -235,12 +235,10 @@ def practice_problem3(start, n, threshold):
     ####################################################################
     list = []
     k = 0
-    while True:
-        if len(list) == n:
-            break
-        if (math.sin(start + k) + math.cos(start + k)) > threshold:
+    while not len(list) == n:
+        if math.sin(start + k) + math.cos(start + k) >= threshold:
             list = list + [start + k]
-            start = start + 1
+        k = k + 1
     return list
 
 # ----------------------------------------------------------------------
